@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_filter :authenticate_user!
   def show
     @job = Job.find(params[:id])
     if @job.is_hidden
